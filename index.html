@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>🎬 CineTopia: Taquilla Digital</h1>
         <p>Completa tu orden de boletos y combos de comida</p>
     </header>
 
     <main class="contenedor-principal">
+
         <section class="tarjeta">
+
             <h2>Configura tu Función</h2>
+
             <form id="formulario-cine">
-                
+
                 <div class="campo">
                     <label for="pelicula">Película:</label>
+
                     <select id="pelicula" required>
                         <option value="">-- Selecciona una película --</option>
                         <option value="120">Aventura Espacial ($120 MXN)</option>
                         <option value="100">Mansión Embrujada ($100 MXN)</option>
-                        </select>
+                        <option value="90">Romance en París ($90 MXN)</option>
+                    </select>
                 </div>
 
                 <div class="campo">
@@ -33,40 +39,83 @@
 
                 <div class="campo">
                     <label>Tipo de Asiento:</label>
+
                     <div class="opciones-inline">
+
                         <label>
-                            <input type="radio" name="asiento" value="tradicional" checked> Tradicional (Sin costo extra)
+                            <input type="radio" name="asiento" value="tradicional" checked>
+                            Tradicional (Sin costo extra)
                         </label>
-                        </div>
+
+                        <label>
+                            <input type="radio" name="asiento" value="vip">
+                            VIP (+$50 MXN por boleto)
+                        </label>
+
+                    </div>
                 </div>
 
                 <div class="campo">
                     <label>Agrega un Combo de Comida:</label>
+
                     <div class="opciones-vertical">
+
                         <label>
-                            <input type="checkbox" id="combo-palomitas" value="150"> Combo Palomitas + Refresco ($150 MXN)
+                            <input type="checkbox" id="combo-palomitas" value="150">
+                            Combo Palomitas + Refresco ($150 MXN)
                         </label>
+
                         <label>
-                            <input type="checkbox" id="combo-hotdog" value="120"> Combo HotDog + Refresco ($120 MXN)
+                            <input type="checkbox" id="combo-hotdog" value="120">
+                            Combo HotDog + Refresco ($120 MXN)
                         </label>
-                        </div>
+
+                        <label>
+                            <input type="checkbox" id="combo-pareja" value="250">
+                            Combo Pareja (Palomitas grandes + 2 Refrescos + Dulce) ($250 MXN)
+                        </label>
+
+                    </div>
                 </div>
 
-                <button type="button" id="btn-calcular">Calcular Total</button>
+                <button type="button" id="btn-calcular">
+                    Calcular Total
+                </button>
+
             </form>
+
         </section>
 
         <section class="tarjeta resumen">
+
             <h2>Resumen de tu Orden</h2>
+
             <div class="detalle-resumen">
-                <p>Subtotal Boletos: <span id="resumen-boletos">$0.00</span></p>
-                <p>Cargos Extra (Asiento): <span id="resumen-asiento">$0.00</span></p>
-                <p>Snacks/Combos: <span id="resumen-snacks">$0.00</span></p>
+                <p>Subtotal Boletos:
+                    <span id="resumen-boletos">$0.00</span>
+                </p>
+
+                <p>Cargos Extra (Asiento):
+                    <span id="resumen-asiento">$0.00</span>
+                </p>
+
+                <p>Snacks/Combos:
+                    <span id="resumen-snacks">$0.00</span>
+                </p>
+
                 <hr>
-                <h3>Total a Pagar: <span id="total-pagar">$0.00</span></h3>
+
+                <h3>
+                    Total a Pagar:
+                    <span id="total-pagar">$0.00</span>
+                </h3>
+
             </div>
+
             <div id="mensaje-alerta" class="alerta oculto"></div>
+
         </section>
+
     </main>
 
     <footer>
@@ -74,5 +123,6 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
