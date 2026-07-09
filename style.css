@@ -1,4 +1,3 @@
-/* Estilos Globales Modernos */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,14 +27,13 @@ header p {
     color: #94a3b8;
 }
 
-/* ERROR INTENCIONAL / REQUISITO CSS: 
-   El contenedor principal debe alinear las dos tarjetas de forma paralela en pantallas grandes 
-   y una debajo de la otra en pantallas móviles (responsivo). Actualmente bloquea el flujo. */
 .contenedor-principal {
-    display: block; /* CAMBIAR ESTO POR EL MODELO FLEXBOX ADECUADO */
+    display: flex;
+    flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
     gap: 20px;
+    align-items: flex-start;
 }
 
 .tarjeta {
@@ -44,8 +42,8 @@ header p {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #334155;
-    flex: 1; /* Esto ayudará cuando se active Flexbox en el contenedor */
-    margin-bottom: 20px; /* Temporal mientras no hay flex-wrap */
+    flex: 1;
+    min-width: 320px;
 }
 
 .tarjeta h2 {
@@ -67,7 +65,8 @@ label {
     color: #cbd5e1;
 }
 
-select, input[type="number"] {
+select,
+input[type="number"] {
     width: 100%;
     padding: 10px;
     background-color: #0f172a;
@@ -77,7 +76,8 @@ select, input[type="number"] {
     font-size: 1rem;
 }
 
-.opciones-inline, .opciones-vertical {
+.opciones-inline,
+.opciones-vertical {
     background-color: #0f172a;
     padding: 12px;
     border-radius: 6px;
@@ -86,7 +86,7 @@ select, input[type="number"] {
 
 .opciones-inline label {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
@@ -100,7 +100,8 @@ select, input[type="number"] {
     margin-bottom: 0;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     margin-right: 8px;
     accent-color: #ff4757;
 }
@@ -122,7 +123,6 @@ button:hover {
     background-color: #ff6b81;
 }
 
-/* Resumen y Alertas */
 .resumen h3 {
     font-size: 1.6rem;
     color: #2ed573;
@@ -162,4 +162,20 @@ footer {
     margin-top: 40px;
     color: #64748b;
     font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .opciones-inline label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
 }
